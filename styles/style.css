@@ -416,16 +416,6 @@ main {
     block-size: 16px;
   }
 
-  .navigation {
-    font-size: 10px;
-    line-height: 12px;
-  }
-
-  .icon {
-    inline-size: 9px;
-    block-size: 9px;
-  }
-
   main {
     padding: 50vw 16px 0;
   }
