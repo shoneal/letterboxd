@@ -9,6 +9,7 @@ const films = {
     "One Battle After Another": ["2025-09-26", 6],
     Nonnas: ["2025-05-09", 5],
     "Wake Up Dead Man": ["2025-12-12", 6],
+    "The Roses": ["2025-08-18", 4],
   },
   2024: {
     "Orion and the Dark": ["2024-02-02", 5],
@@ -17,11 +18,11 @@ const films = {
     "Furiosa: A Mad Max Saga": ["2024-05-23", 5],
     Challengers: ["2024-04-24", 5],
     "Deadpool & Wolverine": ["2024-07-25", 5],
-    "Alien: Romulus": ["2024-08-15", 5],
-    "The Wild Robot": ["2024-09-27", 5],
-    Flow: ["2024-08-29", 5],
+    "Alien: Romulus": ["2024-08-15", 4],
+    "The Wild Robot": ["2024-09-27", 3],
+    Flow: ["2024-08-29", 4],
     "Paddington in Peru": ["2024-11-28", 5],
-    Nosferatu: ["2024-12-25", 5],
+    Nosferatu: ["2024-12-25", 6],
   },
 }; // Главный объект
 
@@ -113,7 +114,7 @@ function updateUI(year) {
     const alt = `"${title}" Poster`;
     img.style.opacity = "0";
     img.alt = alt;
-    img.src = `${basicLink}posters/thumb/${year}/${toSlug(title)}.jpg`;
+    img.src = `${basicLink}posters/${year}/thumb/${toSlug(title)}.jpg`;
 
     if (img.complete) {
       img.style.opacity = "1";
@@ -128,7 +129,7 @@ function updateUI(year) {
     li.addEventListener("click", (e) => {
       const posterImage = popup.querySelector(".poster-image");
 
-      posterImage.src = `${basicLink}posters/full/${year}/${toSlug(title)}.jpg`;
+      posterImage.src = `${basicLink}posters/${year}/full/${toSlug(title)}.jpg`;
       posterImage.alt = alt;
 
       openPopup(popup);
