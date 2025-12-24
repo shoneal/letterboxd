@@ -78,9 +78,23 @@ function updateUI(year) {
   const randomTitle = titles[Math.floor(Math.random() * titles.length)];
   const randomNum = Math.floor(Math.random() * data[randomTitle][1]) + 1;
 
-  const backdrop = document.querySelector(".backdropimage");
+  const backdropContainer = document.querySelector(".backdrop-container");
+  const backdrop = backdropContainer.querySelector(".backdropimage");
+  backdropContainer.style.opacity = "0";
   backdrop.src = `${basicLink}backdrop/${toSlug(randomTitle)}/${randomNum}.jpg`;
   backdrop.alt = `"${randomTitle}" Shot`;
+  if (backdrop.complete) {
+    backdropContainer.style.opacity = "1";
+  } else {
+    backdrop.addEventListener(
+      "load",
+      () => (backdropContainer.style.opacity = "1")
+    );
+    backdrop.addEventListener(
+      "error",
+      () => (backdropContainer.style.opacity = "1")
+    );
+  }
 
   document.querySelector(
     ".backdrop-metadata"
@@ -95,8 +109,16 @@ function updateUI(year) {
 
     const img = document.createElement("img");
     const alt = `"${title}" Poster`;
+    img.style.opacity = "0";
     img.alt = alt;
     img.src = `${basicLink}posters/thumb/${toSlug(title)}.jpg`;
+
+    if (img.complete) {
+      img.style.opacity = "1";
+    } else {
+      img.addEventListener("load", () => (img.style.opacity = "1"));
+      img.addEventListener("error", () => (img.style.opacity = "1"));
+    }
 
     li.appendChild(img);
     posterList.appendChild(li);
