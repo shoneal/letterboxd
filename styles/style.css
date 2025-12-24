@@ -40,7 +40,7 @@ video {
 body {
   position: relative;
   margin: 0;
-  padding: 0 15px;
+  padding: 0;
   overflow-x: hidden;
   font-family: "GraphikWeb", -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
@@ -143,12 +143,7 @@ body {
 header {
   position: relative;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  max-inline-size: var(--body-width);
-  inline-size: 100%;
-  block-size: 72px;
+  justify-content: center;
 }
 
 .site-header-bg {
@@ -173,12 +168,22 @@ header {
   block-size: 95px;
 }
 
+header section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: 16px;
+  max-inline-size: var(--body-width);
+  inline-size: 100%;
+  block-size: 72px;
+}
+
 .logo {
   position: relative;
   z-index: 1;
   display: block;
   background: url(https://shoneal.github.io/letterboxd/images/logo-full.svg)
-    no-repeat center / contain;
+    no-repeat left center / contain;
   inline-size: 273px;
   block-size: 25px;
 }
@@ -270,6 +275,7 @@ header {
 }
 
 main {
+  margin-inline: 16px;
   padding-block-start: 280px;
   min-block-size: 290px;
 }
@@ -398,25 +404,27 @@ main {
     block-size: 100%;
   }
 
-  header {
+  .site-header-bg {
+    display: none;
+  }
+
+  header section {
+    margin-inline: 0;
     padding-inline: 16px;
     background: #14181c;
     max-inline-size: 100%;
     block-size: 40px;
   }
 
-  .site-header-bg {
-    display: none;
-  }
-
   .logo {
     background: url(https://shoneal.github.io/letterboxd/images/logo.svg)
-      no-repeat center / contain;
+      no-repeat left center / contain;
     inline-size: 42px;
     block-size: 16px;
   }
 
   main {
+    margin-inline: 0;
     padding: 50vw 16px 0;
   }
 
