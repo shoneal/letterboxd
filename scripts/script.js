@@ -1,14 +1,14 @@
 const films = {
   2025: {
-    "Black Bag": ["2025-03-14", 5],
-    Warfare: ["2025-04-10", 5],
+    "Black Bag": ["2025-03-14", 2],
+    Warfare: ["2025-04-10", 2],
     "Thunderbolts*": ["2025-05-01", 5],
-    Materialists: ["2025-06-19", 5],
-    Weapons: ["2025-08-08", 5],
-    "Caught Stealing": ["2025-08-29", 5],
-    "One Battle After Another": ["2025-09-26", 5],
+    Materialists: ["2025-06-19", 6],
+    Weapons: ["2025-08-08", 2],
+    "Caught Stealing": ["2025-08-29", 6],
+    "One Battle After Another": ["2025-09-26", 6],
     Nonnas: ["2025-05-09", 5],
-    "Wake Up Dead Man": ["2025-12-12", 7],
+    "Wake Up Dead Man": ["2025-12-12", 6],
   },
   2024: {
     "Orion and the Dark": ["2024-02-02", 5],
@@ -81,7 +81,9 @@ function updateUI(year) {
   const backdropContainer = document.querySelector(".backdrop-container");
   const backdrop = backdropContainer.querySelector(".backdropimage");
   backdropContainer.style.opacity = "0";
-  backdrop.src = `${basicLink}backdrop/${toSlug(randomTitle)}/${randomNum}.jpg`;
+  backdrop.src = `${basicLink}backdrop/${year}/${toSlug(
+    randomTitle
+  )}/${randomNum}.jpg`;
   backdrop.alt = `"${randomTitle}" Shot`;
   if (backdrop.complete) {
     backdropContainer.style.opacity = "1";
@@ -111,7 +113,7 @@ function updateUI(year) {
     const alt = `"${title}" Poster`;
     img.style.opacity = "0";
     img.alt = alt;
-    img.src = `${basicLink}posters/thumb/${toSlug(title)}.jpg`;
+    img.src = `${basicLink}posters/thumb/${year}/${toSlug(title)}.jpg`;
 
     if (img.complete) {
       img.style.opacity = "1";
@@ -126,7 +128,7 @@ function updateUI(year) {
     li.addEventListener("click", (e) => {
       const posterImage = popup.querySelector(".poster-image");
 
-      posterImage.src = `${basicLink}posters/full/${toSlug(title)}.jpg`;
+      posterImage.src = `${basicLink}posters/full/${year}/${toSlug(title)}.jpg`;
       posterImage.alt = alt;
 
       openPopup(popup);
