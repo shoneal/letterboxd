@@ -1,7 +1,7 @@
 const films = {
   2025: {
     "Black Bag": ["2025-03-14", 2],
-    Warfare: ["2025-04-10", 2],
+    Warfare: ["2025-04-10", 3],
     "Thunderbolts*": ["2025-05-01", 5],
     Materialists: ["2025-06-19", 6],
     Weapons: ["2025-08-08", 2],
