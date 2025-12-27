@@ -42,7 +42,11 @@
 
   <body>
     <div class="backdrop-container">
-      <img class="backdropimage" src="" alt="" />
+      <picture class="backdropimage">
+        <source srcset="" media="(max-width: 767px)" />
+        <source srcset="" media="(min-width: 768px)" />
+        <img class="backdropimage-img" src="" alt="" />
+      </picture>
       <div class="backdropmask"></div>
     </div>
     <header>
@@ -71,11 +75,14 @@
       </div>
     </main>
     <div class="popup">
-      <div class="popup-content">
-        <div class="poster">
-          <img class="poster-image" src="" alt="" />
+      <div class="modal-popup fade">
+        <div class="modal-body">
+          <div class="poster">
+            <img class="poster-image" src="" alt="" />
+          </div>
         </div>
       </div>
+      <div class="backdrop"></div>
     </div>
 
     <script src="./scripts/script.js"></script>
