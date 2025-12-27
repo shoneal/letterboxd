@@ -280,7 +280,7 @@ header section {
 
 main {
   margin-inline: 16px;
-  padding-block-start: 400px;
+  padding-block: 400px 30px;
   min-block-size: 290px;
 }
 
@@ -466,7 +466,7 @@ main {
 
   main {
     margin-inline: 0;
-    padding: 50vw 16px 0;
+    padding: 50vw 16px 30px;
   }
 
   .backdrop-metadata {
