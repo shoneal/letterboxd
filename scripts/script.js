@@ -10,6 +10,8 @@ const films = {
     Nonnas: ["2025-05-09", 6],
     "Wake Up Dead Man": ["2025-12-12", 7],
     "The Roses": ["2025-08-18", 5],
+    "Train Dreams": ["2025-11-21", 5],
+    Eternity: ["2025-09-07", 4],
   },
   2024: {
     "Orion and the Dark": ["2024-02-02"],
