@@ -12,6 +12,7 @@ const films = {
     "The Roses": ["2025-08-18", 5],
     "Train Dreams": ["2025-11-21", 5],
     Eternity: ["2025-09-07", 4],
+    Relay: ["2025-08-21", 3],
   },
   2024: {
     "Orion and the Dark": ["2024-02-02"],
