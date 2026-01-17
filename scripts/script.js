@@ -13,6 +13,7 @@ const films = {
     "Train Dreams": ["2025-11-21", 5],
     Eternity: ["2025-09-07", 4],
     Relay: ["2025-08-21", 3],
+    "Jay Kelly": ["2025-12-05", 7],
   },
   2024: {
     "Orion and the Dark": ["2024-02-02"],
@@ -32,8 +33,8 @@ const films = {
 for (const section in films) {
   films[section] = Object.fromEntries(
     Object.entries(films[section]).sort(([, [dateA]], [, [dateB]]) =>
-      dateB.localeCompare(dateA)
-    )
+      dateB.localeCompare(dateA),
+    ),
   );
 } // Сортировка по дате
 
@@ -94,7 +95,7 @@ function updateUI(year) {
   if (!data) return;
 
   const validTitles = Object.keys(data).filter(
-    (title) => data[title].length >= 2
+    (title) => data[title].length >= 2,
   );
   const randomTitle =
     validTitles[Math.floor(Math.random() * validTitles.length)];
@@ -102,7 +103,7 @@ function updateUI(year) {
 
   const getBackdropUrl = (sizeType) =>
     `${basicLink}backdrop/${year}/${toSlug(
-      randomTitle
+      randomTitle,
     )}/${sizeType}/${randomNum}.jpg`;
 
   const backdropContainer = document.querySelector(".backdrop-container");
@@ -110,10 +111,10 @@ function updateUI(year) {
   const backdropImg = backdropPicture.querySelector("img");
 
   const mobileSource = backdropPicture.querySelector(
-    'source[media="(max-width: 767px)"]'
+    'source[media="(max-width: 767px)"]',
   );
   const desktopSource = backdropPicture.querySelector(
-    'source[media="(min-width: 768px)"]'
+    'source[media="(min-width: 768px)"]',
   );
 
   mobileSource.srcset = getBackdropUrl("mobile");
@@ -124,9 +125,8 @@ function updateUI(year) {
   backdropContainer.style.opacity = "0";
   setupImageWithContainer(backdropImg, backdropContainer);
 
-  document.querySelector(
-    ".backdrop-metadata"
-  ).textContent = `${randomTitle} (${year})`;
+  document.querySelector(".backdrop-metadata").textContent =
+    `${randomTitle} (${year})`;
 
   const posterList = document.querySelector(".poster-list");
   posterList.innerHTML = "";
