@@ -9,11 +9,11 @@ const films = {
     "One Battle After Another": ["2025-09-26", 7],
     Nonnas: ["2025-05-09", 6],
     "Wake Up Dead Man": ["2025-12-12", 7],
-    "The Roses": ["2025-08-18", 5],
     "Train Dreams": ["2025-11-21", 5],
-    Eternity: ["2025-09-07", 4],
+    Eternity: ["2025-09-07", 3],
     Relay: ["2025-08-21", 3],
     "Jay Kelly": ["2025-12-05", 7],
+    "Marty Supreme": ["2025-10-06", 5],
   },
   2024: {
     "Orion and the Dark": ["2024-02-02"],
