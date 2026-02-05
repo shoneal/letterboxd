@@ -14,6 +14,7 @@ const films = {
     Relay: ["2025-08-21", 3],
     "Jay Kelly": ["2025-12-05", 7],
     "Marty Supreme": ["2025-10-06", 5],
+    "Rental Family": ["2025-09-06", 6],
   },
   2024: {
     "Orion and the Dark": ["2024-02-02"],
