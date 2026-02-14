@@ -1,36 +1,3 @@
-const films = {
-  2025: {
-    "Black Bag": ["2025-03-14", 6],
-    Warfare: ["2025-04-10", 5],
-    "Thunderbolts*": ["2025-05-01", 6],
-    Materialists: ["2025-06-19", 6],
-    Weapons: ["2025-08-08", 4],
-    "Caught Stealing": ["2025-08-29", 8],
-    "One Battle After Another": ["2025-09-26", 7],
-    Nonnas: ["2025-05-09", 6],
-    "Wake Up Dead Man": ["2025-12-12", 7],
-    "Train Dreams": ["2025-11-21", 5],
-    Eternity: ["2025-09-07", 3],
-    Relay: ["2025-08-21", 3],
-    "Jay Kelly": ["2025-12-05", 7],
-    "Marty Supreme": ["2025-10-06", 5],
-    "Rental Family": ["2025-09-06", 6],
-  },
-  2024: {
-    "Orion and the Dark": ["2024-02-02"],
-    "Dune: Part Two": ["2024-02-28", 11],
-    "Arthur the King": ["2024-04-04", 4],
-    "Furiosa: A Mad Max Saga": ["2024-05-23", 6],
-    Challengers: ["2024-04-24", 4],
-    "Deadpool & Wolverine": ["2024-07-25", 17],
-    "Alien: Romulus": ["2024-08-15", 5],
-    "The Wild Robot": ["2024-09-27", 6],
-    Flow: ["2024-08-29", 10],
-    "Paddington in Peru": ["2024-11-28", 5],
-    Nosferatu: ["2024-12-25", 11],
-  },
-}; // Главный объект
-
 for (const section in films) {
   films[section] = Object.fromEntries(
     Object.entries(films[section]).sort(([, [dateA]], [, [dateB]]) =>
