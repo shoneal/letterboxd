@@ -1,3 +1,5 @@
+import { films } from "./films.js";
+
 for (const section in films) {
   films[section] = Object.fromEntries(
     Object.entries(films[section]).sort(([, [dateA]], [, [dateB]]) =>

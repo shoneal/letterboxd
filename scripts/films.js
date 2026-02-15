@@ -1,4 +1,4 @@
-const films = {
+export const films = {
   2025: {
     "Black Bag": ["2025-03-14", 6],
     Warfare: ["2025-04-10", 5],
