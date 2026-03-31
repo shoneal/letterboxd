@@ -45,10 +45,9 @@ function toSlug(text) {
     .replace(/\s+/g, "-");
 } // Названия в соответсвующий вид
 const popup = document.querySelector(".popup");
-const setupImageWithContainer = (img, container = null) => {
+const setupImageWithContainer = (img) => {
   const onLoadOrError = () => {
     img.style.opacity = "1";
-    if (container) container.style.opacity = "1";
     img.removeEventListener("load", onLoadOrError);
     img.removeEventListener("error", onLoadOrError);
   };
@@ -87,13 +86,15 @@ function updateUI(year) {
     'source[media="(min-width: 768px)"]',
   );
 
-  mobileSource.srcset = getBackdropUrl("mobile");
-  desktopSource.srcset = getBackdropUrl("desktop");
-  backdropImg.src = getBackdropUrl("desktop");
-  backdropImg.alt = `"${randomTitle}" Shot`;
+  backdropImg.style.opacity = "0";
+  setTimeout(() => {
+    mobileSource.srcset = getBackdropUrl("mobile");
+    desktopSource.srcset = getBackdropUrl("desktop");
+    backdropImg.src = getBackdropUrl("desktop");
+    backdropImg.alt = `"${randomTitle}" Shot`;
 
-  backdropContainer.style.opacity = "0";
-  setupImageWithContainer(backdropImg, backdropContainer);
+    setupImageWithContainer(backdropImg);
+  }, 750);
 
   document.querySelector(".backdrop-metadata").textContent =
     `${randomTitle} (${year})`;
@@ -106,11 +107,14 @@ function updateUI(year) {
     li.title = `${title} (${year})`;
 
     const img = document.createElement("img");
-    const alt = `"${title}" Poster`;
     img.style.opacity = "0";
+    const alt = `"${title}" Poster`;
     img.alt = alt;
     img.src = `${basicLink}posters/${year}/thumb/${toSlug(title)}.jpg`;
-    setupImageWithContainer(img);
+
+    setTimeout(() => {
+      setupImageWithContainer(img);
+    }, 333);
 
     li.appendChild(img);
     posterList.appendChild(li);
@@ -135,9 +139,14 @@ const openPopup = (popup) => {
   body.style.top = `-${body.dataset.scrollPosition}px`;
   body.classList.add("scroll-lock");
   popup.classList.add("show");
-  requestAnimationFrame(() => {
-    popup.querySelector(".modal-popup").classList.add("show");
-  });
+
+  popup.querySelector(".poster-image").addEventListener(
+    "load",
+    () => {
+      popup.querySelector(".modal-popup").classList.add("show");
+    },
+    { once: true },
+  );
 
   document.addEventListener("keydown", closePopupByEsc);
 }; // Открытие popup
