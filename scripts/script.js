@@ -135,8 +135,9 @@ function updateUI(year) {
 
 const openPopup = (popup) => {
   const body = document.body;
-  body.dataset.scrollPosition = window.scrollY;
-  body.style.top = `-${body.dataset.scrollPosition}px`;
+  const scrollPosition = window.scrollY;
+  body.dataset.scrollPosition = scrollPosition;
+  body.style.top = `-${scrollPosition}px`;
   body.classList.add("scroll-lock");
   popup.classList.add("show");
 
@@ -153,6 +154,9 @@ const openPopup = (popup) => {
 const closePopup = (popup) => {
   const body = document.body;
   const scrollPosition = body.dataset.scrollPosition;
+  body.style.top = "";
+  body.classList.remove("scroll-lock");
+  window.scrollTo(0, scrollPosition);
   popup.querySelector(".modal-popup").classList.remove("show");
   setTimeout(() => {
     body.style.top = "";
