@@ -1,11 +1,12 @@
 import { films } from "./films.js";
 
 for (const section in films) {
-  films[section] = Object.fromEntries(
-    Object.entries(films[section]).sort(([, [dateA]], [, [dateB]]) =>
-      dateB.localeCompare(dateA),
-    ),
+  const entries = Object.entries(films[section]);
+  entries.sort(
+    ([keyA, [dateA]], [keyB, [dateB]]) =>
+      dateB.localeCompare(dateA) || keyA.localeCompare(keyB),
   );
+  films[section] = Object.fromEntries(entries);
 } // Сортировка по дате
 
 const basicLink = "https://shoneal.github.io/letterboxd/images/"; // Главная ссылка
