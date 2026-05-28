@@ -202,6 +202,7 @@ header section {
   display: block;
   background: url(https://shoneal.github.io/letterboxd/images/logo-full.svg)
     no-repeat left center / contain;
+  pointer-events: none;
   inline-size: 273px;
   block-size: 25px;
 }
