@@ -41,10 +41,10 @@ const hide = () => (subnavigation.style.display = "none"); // Закрытие �
 function toSlug(text) {
   return text
     .toLowerCase()
-    .replace(/[^a-z0-9\s]/g, "")
+    .replace(/[^a-z0-9\s-]/g, "")
     .trim()
     .replace(/\s+/g, "-");
-} // Названия в соответсвующий вид
+} // Названия в соответствующий вид
 const popup = document.querySelector(".popup");
 const setupImageWithContainer = (img) => {
   const onLoadOrError = () => {
