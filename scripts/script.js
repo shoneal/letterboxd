@@ -38,13 +38,14 @@ const isLarge = () => window.innerWidth >= 768;
 const show = () => (subnavigation.style.display = "block"); // Открытие навигации
 const hide = () => (subnavigation.style.display = "none"); // Закрытие навигации
 
-function toSlug(text) {
-  return text
+const toSlug = (text) =>
+  text
     .toLowerCase()
     .replace(/[^a-z0-9\s-]/g, "")
     .trim()
-    .replace(/\s+/g, "-");
-} // Названия в соответствующий вид
+    .replace(/[\s-]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+// Названия в соответствующий вид
 const popup = document.querySelector(".popup");
 const setupImageWithContainer = (img) => {
   const onLoadOrError = () => {
