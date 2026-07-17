@@ -3,6 +3,7 @@ export const films = {
     Hoppers: ["2026-03-04", 5],
     "The Drama": ["2026-03-26", 2],
     Obsession: ["2026-04-16", 3],
+    "Project Hail Mary": ["2026-03-15", 4],
   },
   2025: {
     "Black Bag": ["2025-03-12", 4],
