@@ -4,6 +4,9 @@ export const films = {
     "The Drama": ["2026-03-26", 2],
     Obsession: ["2026-04-16", 3],
     "Project Hail Mary": ["2026-03-15", 4],
+    Tuner: ["2026-05-21", 3],
+    "The Odyssey": ["2026-07-15", 8],
+    "Spider-Man: Brand New Day": ["2026-07-29", 7],
   },
   2025: {
     "Black Bag": ["2025-03-12", 4],
